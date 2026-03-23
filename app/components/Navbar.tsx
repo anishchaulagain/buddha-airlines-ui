@@ -26,10 +26,7 @@ export default function Navbar() {
         alignItems: "center",
         justifyContent: "space-between",
         padding: "0 clamp(1.5rem, 4vw, 4rem)",
-        background: "rgba(255, 255, 255, 0.8)",
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)",
-        borderBottom: "1px solid rgba(0, 0, 0, 0.05)",
+        background: "transparent",
       }}
     >
       {/* Brand */}
@@ -39,7 +36,7 @@ export default function Navbar() {
           fontSize: "1.2rem",
           fontWeight: 700,
           letterSpacing: "0.02em",
-          color: "var(--accent-blue)",
+          color: "var(--primary)",
           textDecoration: "none",
           textTransform: "uppercase",
         }}
