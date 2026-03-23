@@ -13,7 +13,7 @@ export default function CTASection() {
   });
 
   const mountainY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-  const cloudX = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  const cloudY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
 
   return (
     <section
@@ -21,13 +21,15 @@ export default function CTASection() {
       ref={sectionRef}
       style={{
         position: "relative",
-        padding: "12rem 2rem 10rem",
+        padding: "12rem 2rem 17rem",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        background: "#316089",
+        backgroundImage: "url('/cta-assets/sky-1.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         overflow: "hidden",
       }}
     >
@@ -36,8 +38,8 @@ export default function CTASection() {
         style={{
           position: "absolute",
           bottom: 0,
-          left: 0,
-          width: "100%",
+          left: "-10%",
+          width: "120%",
           height: "100%",
           backgroundImage: "url('/cta-assets/experience-mountain.png')",
           backgroundSize: "cover",
@@ -49,7 +51,7 @@ export default function CTASection() {
       />
 
       {/* Background Cloud */}
-      <motion.div
+      {/* <motion.div
         style={{
           position: "absolute",
           top: 0,
@@ -61,10 +63,10 @@ export default function CTASection() {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           zIndex: 1,
-          x: cloudX,
+          y: cloudY,
           opacity: 1,
         }}
-      />
+      /> */}
 
       {/* Content */}
       <motion.div
