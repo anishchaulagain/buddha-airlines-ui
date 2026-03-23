@@ -3,7 +3,7 @@
 import Navbar from "./components/Navbar";
 import ScrollCanvas from "./components/ScrollCanvas";
 import CTASection from "./components/CTASection";
-import SpecsSection from "./components/SpecsSection";
+import BookingFlight from "./components/BookingFlight";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -24,8 +24,8 @@ export default function Home() {
       {/* Scroll-linked image sequence + story overlays */}
       <ScrollCanvas />
 
-      {/* Specifications */}
-      <SpecsSection />
+      {/* Booking Flight */}
+      <BookingFlight />
 
       {/* CTA Section */}
       <CTASection />

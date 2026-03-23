@@ -6,11 +6,11 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
-    { label: "Overview", href: "#overview" },
-    { label: "Craftsmanship", href: "#craftsmanship" },
-    { label: "Movement", href: "#movement" },
-    { label: "Materials", href: "#materials" },
-    { label: "Specs", href: "#specs" },
+    { label: "Book", href: "#book" },
+    { label: "My Trips", href: "#" },
+    { label: "Check-in", href: "#" },
+    { label: "Flight Status", href: "#" },
+    { label: "Offers", href: "#" },
   ];
 
   return (
@@ -21,27 +21,30 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 1000,
-        height: "64px",
+        height: "80px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         padding: "0 clamp(1.5rem, 4vw, 4rem)",
-        background: "transparent",
+        background: "rgba(255, 255, 255, 0.8)",
+        backdropFilter: "blur(20px)",
+        WebkitBackdropFilter: "blur(20px)",
+        borderBottom: "1px solid rgba(0, 0, 0, 0.05)",
       }}
     >
       {/* Brand */}
       <a
         href="#"
         style={{
-          fontSize: "1.1rem",
-          fontWeight: 600,
-          letterSpacing: "0.08em",
-          color: "rgba(255,255,255,0.9)",
+          fontSize: "1.2rem",
+          fontWeight: 700,
+          letterSpacing: "0.02em",
+          color: "var(--accent-blue)",
           textDecoration: "none",
           textTransform: "uppercase",
         }}
       >
-        Chrono X1
+        Buddha Airlines
       </a>
 
       {/* Center Links — Desktop */}
@@ -49,7 +52,7 @@ export default function Navbar() {
         style={{
           display: "flex",
           alignItems: "center",
-          gap: "2rem",
+          gap: "2.5rem",
         }}
         className="nav-links-desktop"
       >
@@ -58,19 +61,17 @@ export default function Navbar() {
             key={link.label}
             href={link.href}
             style={{
-              fontSize: "0.8rem",
-              fontWeight: 400,
-              letterSpacing: "0.04em",
-              color: "rgba(255,255,255,0.6)",
+              fontSize: "0.85rem",
+              fontWeight: 500,
+              color: "var(--text-body)",
               textDecoration: "none",
               transition: "color 0.3s ease",
-              textTransform: "uppercase",
             }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.color = "rgba(255,255,255,0.95)")
+              (e.currentTarget.style.color = "var(--accent-blue)")
             }
             onMouseLeave={(e) =>
-              (e.currentTarget.style.color = "rgba(255,255,255,0.6)")
+              (e.currentTarget.style.color = "var(--text-body)")
             }
           >
             {link.label}
@@ -80,14 +81,14 @@ export default function Navbar() {
 
       {/* CTA — Desktop */}
       <a
-        href="#discover"
+        href="#book"
         className="btn-primary nav-cta-desktop"
         style={{
-          padding: "0.6rem 1.5rem",
-          fontSize: "0.75rem",
+          padding: "0.7rem 1.8rem",
+          fontSize: "0.8rem",
         }}
       >
-        <span>Discover the Watch</span>
+        <span>Book Now</span>
       </a>
 
       {/* Mobile menu button */}
@@ -108,19 +109,19 @@ export default function Navbar() {
           height="24"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="rgba(255,255,255,0.8)"
-          strokeWidth="1.5"
+          stroke="var(--accent-blue)"
+          strokeWidth="2"
         >
           {mobileOpen ? (
             <>
+              <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
-              <line x1="6" y1="18" x2="18" y2="6" />
             </>
           ) : (
             <>
-              <line x1="4" y1="7" x2="20" y2="7" />
-              <line x1="4" y1="12" x2="20" y2="12" />
-              <line x1="4" y1="17" x2="20" y2="17" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
             </>
           )}
         </svg>
@@ -132,17 +133,16 @@ export default function Navbar() {
           className="nav-mobile-menu"
           style={{
             position: "absolute",
-            top: "64px",
+            top: "80px",
             left: 0,
             right: 0,
-            background: "rgba(5, 5, 5, 0.95)",
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
-            borderBottom: "1px solid rgba(255,255,255,0.06)",
+            background: "white",
+            borderBottom: "1px solid rgba(0, 0, 0, 0.05)",
             padding: "1.5rem 2rem",
             display: "flex",
             flexDirection: "column",
             gap: "1.25rem",
+            boxShadow: "0 10px 20px rgba(0,0,0,0.05)"
           }}
         >
           {navLinks.map((link) => (
@@ -151,30 +151,28 @@ export default function Navbar() {
               href={link.href}
               onClick={() => setMobileOpen(false)}
               style={{
-                fontSize: "0.9rem",
-                fontWeight: 400,
-                color: "rgba(255,255,255,0.7)",
+                fontSize: "1rem",
+                fontWeight: 500,
+                color: "var(--text-body)",
                 textDecoration: "none",
-                textTransform: "uppercase",
-                letterSpacing: "0.04em",
               }}
             >
               {link.label}
             </a>
           ))}
           <a
-            href="#discover"
+            href="#book"
             className="btn-primary"
             style={{
-              padding: "0.7rem 1.5rem",
-              fontSize: "0.75rem",
+              padding: "0.8rem 1.5rem",
+              fontSize: "0.85rem",
               textAlign: "center",
               justifyContent: "center",
               marginTop: "0.5rem",
             }}
             onClick={() => setMobileOpen(false)}
           >
-            <span>Discover the Watch</span>
+            <span>Book Now</span>
           </a>
         </div>
       )}

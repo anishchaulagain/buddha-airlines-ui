@@ -35,8 +35,8 @@ const STORIES: StoryBlock[] = [
     align: "center",
     heading: "Buddha Airlines",
     lines: [
-      "Time, perfected.",
-      "A mechanical masterpiece engineered for precision and presence.",
+      "The Spirit of Nepal.",
+      "Experience the beauty of the Himalayas from the best seat in the sky.",
     ],
   },
   {
@@ -44,11 +44,11 @@ const STORIES: StoryBlock[] = [
     startPct: 0.16,
     endPct: 0.38,
     align: "left",
-    caption: "Craftsmanship",
-    heading: "Engineered with precision.",
+    caption: "Experience",
+    heading: "Comfort in every mile.",
     lines: [
-      "Layered construction ensures strength and elegance.",
-      "Every component is refined for balance and durability.",
+      "Our fleet is maintained to the highest international standards.",
+      "Relax in our premium cabins designed for your satisfaction.",
     ],
   },
   {
@@ -56,11 +56,11 @@ const STORIES: StoryBlock[] = [
     startPct: 0.40,
     endPct: 0.63,
     align: "right",
-    caption: "Movement",
-    heading: "The art of movement.",
+    caption: "Reliability",
+    heading: "Connecting Nepal.",
     lines: [
-      "Hundreds of micro-components in perfect harmony.",
-      "Precision mechanics built for lasting accuracy.",
+      "Daily flights to the most stunning destinations in Nepal.",
+      "Punctuality and safety are our highest priorities.",
     ],
   },
   {
@@ -68,22 +68,12 @@ const STORIES: StoryBlock[] = [
     startPct: 0.65,
     endPct: 0.83,
     align: "left",
-    caption: "Materials",
-    heading: "Crafted to endure.",
+    caption: "Heritage",
+    heading: "Legacy of Excellence.",
     lines: [
-      "Sapphire clarity. Precision metal. Timeless materials.",
+      "Over 25 years of horizontal excellence in the Nepalese sky.",
     ],
   },
-  // {
-  //   id: "reassembly",
-  //   startPct: 0.85,
-  //   endPct: 1.0,
-  //   align: "center",
-  //   heading: "Every second, elevated.",
-  //   lines: [
-  //     "Built with purpose. Designed for legacy.",
-  //   ],
-  // },
 ];
 
 /* ──────────────────────── Component ──────────────────────── */
@@ -277,11 +267,11 @@ export default function ScrollCanvas() {
             fontWeight: 600,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
-            color: "rgba(255,255,255,0.9)",
+            color: "var(--accent-blue)",
             marginBottom: "0.5rem",
           }}
         >
-          ANISH
+          Buddha Airlines
         </div>
         <div
           style={{
@@ -289,15 +279,18 @@ export default function ScrollCanvas() {
             fontWeight: 500,
             letterSpacing: "0.15em",
             textTransform: "uppercase",
-            color: "rgba(255,255,255,0.4)",
+            color: "var(--text-muted)",
           }}
         >
-          Loading Experience
+          Preparing your journey
         </div>
-        <div className="loader-bar">
+        <div className="loader-bar" style={{ background: "rgba(0,0,0,0.05)" }}>
           <div
             className="loader-fill"
-            style={{ width: `${loadProgress * 100}%` }}
+            style={{ 
+              width: `${loadProgress * 100}%`,
+              background: "var(--accent-blue)"
+            }}
           />
         </div>
         <div
@@ -320,7 +313,7 @@ export default function ScrollCanvas() {
           height: "100vh",
           position: "relative",
           overflow: "hidden",
-          background: "#050505",
+          background: "var(--bg-primary)",
         }}
       >
         <canvas
@@ -329,7 +322,7 @@ export default function ScrollCanvas() {
             width: "100%",
             height: "100%",
             display: "block",
-            background: "#050505",
+            background: "var(--bg-primary)",
           }}
         />
 
@@ -339,7 +332,7 @@ export default function ScrollCanvas() {
             position: "absolute",
             inset: 0,
             background:
-              "radial-gradient(ellipse at 50% 50%, rgba(5,8,21,0.4) 0%, transparent 60%)",
+              "radial-gradient(ellipse at 50% 50%, rgba(49, 96, 137, 0.04) 0%, transparent 60%)",
             pointerEvents: "none",
             zIndex: 1,
           }}
@@ -388,7 +381,7 @@ export default function ScrollCanvas() {
                 }`}
               >
                 {story.caption && (
-                  <div className="caption" style={{ marginBottom: "1rem", color: "#00D6FF" }}>
+                  <div className="caption" style={{ marginBottom: "1rem", color: "var(--accent-blue)" }}>
                     {story.caption}
                   </div>
                 )}
@@ -399,7 +392,7 @@ export default function ScrollCanvas() {
                       className="heading-xl"
                       style={{
                         marginBottom: "0.75rem",
-                        textShadow: "0 0 80px rgba(0,80,255,0.15)",
+                        textShadow: "0 0 80px rgba(49, 96, 137, 0.1)",
                       }}
                     >
                       {story.heading}

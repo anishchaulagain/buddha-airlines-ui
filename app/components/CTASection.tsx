@@ -19,7 +19,7 @@ export default function CTASection() {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        background: "var(--bg-primary)",
+        background: "#f8f9fa",
         overflow: "hidden",
       }}
     >
@@ -33,7 +33,7 @@ export default function CTASection() {
           width: "600px",
           height: "600px",
           background:
-            "radial-gradient(ellipse at center, rgba(0,80,255,0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse at center, rgba(49, 96, 137, 0.06) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -44,18 +44,19 @@ export default function CTASection() {
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         style={{ position: "relative", zIndex: 1, maxWidth: "700px" }}
       >
-        <div className="caption" style={{ marginBottom: "1.5rem", color: "#00D6FF" }}>
-          The Complete Experience
+        <div className="caption" style={{ marginBottom: "1.5rem", color: "var(--accent-blue)" }}>
+          The Spirit of Nepal
         </div>
 
         <h2
           className="heading-lg"
           style={{
             marginBottom: "1.5rem",
-            textShadow: "0 0 60px rgba(0,80,255,0.1)",
+            textShadow: "0 0 60px rgba(49, 96, 137, 0.1)",
+            color: "var(--accent-blue)",
           }}
         >
-          Every second, elevated.
+          Fly High with Buddha Airlines.
         </h2>
 
         <p
@@ -66,9 +67,9 @@ export default function CTASection() {
             margin: "0 auto 3rem",
           }}
         >
-          Built with purpose. Designed for legacy. The ANISH Chrono X1
-          represents the pinnacle of mechanical watchmaking — where engineering
-          precision meets timeless design.
+          Connecting you to the heart of the Himalayas. Experience safety, 
+          comfort, and unparalleled views on every journey with Nepal's 
+          most trusted airline.
         </p>
 
         <div
@@ -79,11 +80,11 @@ export default function CTASection() {
             flexWrap: "wrap",
           }}
         >
-          <a href="#" className="btn-primary">
-            <span>Discover the Watch</span>
+          <a href="#book" className="btn-primary">
+            <span>Book Your Flight</span>
           </a>
-          <a href="#specs" className="btn-secondary">
-            View Specifications
+          <a href="#" className="btn-secondary">
+            View Destinations
           </a>
         </div>
       </motion.div>

@@ -4,11 +4,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { label: "Overview", href: "#overview" },
-    { label: "Craftsmanship", href: "#craftsmanship" },
-    { label: "Movement", href: "#movement" },
-    { label: "Materials", href: "#materials" },
-    { label: "Specifications", href: "#specs" },
+    { label: "Book a Flight", href: "#book" },
+    { label: "Destinations", href: "#" },
+    { label: "Schedules", href: "#" },
+    { label: "Offers", href: "#" },
+    { label: "Travel Info", href: "#" },
   ];
 
   return (
@@ -39,22 +39,22 @@ export default function Footer() {
                 fontWeight: 600,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "rgba(255,255,255,0.9)",
+                color: "var(--accent-blue)",
                 marginBottom: "0.75rem",
               }}
             >
-              ANISH
+              Buddha Airlines
             </div>
             <p
               style={{
                 fontSize: "0.85rem",
-                color: "rgba(255,255,255,0.35)",
+                color: "var(--text-body)",
                 maxWidth: "280px",
                 lineHeight: 1.6,
               }}
             >
-              Precision mechanical timepieces crafted for those who appreciate
-              the art of horology.
+              Excellence in the sky. Nepal's premier airline providing safe, 
+              reliable, and comfortable domestic flights for over 25 years.
             </p>
           </div>
 
@@ -63,9 +63,9 @@ export default function Footer() {
             <div>
               <div
                 className="caption"
-                style={{ marginBottom: "1rem", color: "rgba(255,255,255,0.25)" }}
+                style={{ marginBottom: "1rem" }}
               >
-                Explore
+                Plan & Book
               </div>
               <div
                 style={{
@@ -80,15 +80,15 @@ export default function Footer() {
                     href={link.href}
                     style={{
                       fontSize: "0.85rem",
-                      color: "rgba(255,255,255,0.45)",
+                      color: "var(--text-body)",
                       textDecoration: "none",
                       transition: "color 0.3s ease",
                     }}
                     onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "rgba(255,255,255,0.8)")
+                      (e.currentTarget.style.color = "var(--accent-blue)")
                     }
                     onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = "rgba(255,255,255,0.45)")
+                      (e.currentTarget.style.color = "var(--text-body)")
                     }
                   >
                     {link.label}
@@ -100,9 +100,9 @@ export default function Footer() {
             <div>
               <div
                 className="caption"
-                style={{ marginBottom: "1rem", color: "rgba(255,255,255,0.25)" }}
+                style={{ marginBottom: "1rem" }}
               >
-                Contact
+                Support
               </div>
               <div
                 style={{
@@ -115,52 +115,52 @@ export default function Footer() {
                   href="#"
                   style={{
                     fontSize: "0.85rem",
-                    color: "rgba(255,255,255,0.45)",
+                    color: "var(--text-body)",
                     textDecoration: "none",
                     transition: "color 0.3s ease",
                   }}
                   onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "rgba(255,255,255,0.8)")
+                    (e.currentTarget.style.color = "var(--accent-blue)")
                   }
                   onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "rgba(255,255,255,0.45)")
+                    (e.currentTarget.style.color = "var(--text-body)")
                   }
                 >
-                  Boutiques
+                  Help Center
                 </a>
                 <a
                   href="#"
                   style={{
                     fontSize: "0.85rem",
-                    color: "rgba(255,255,255,0.45)",
+                    color: "var(--text-body)",
                     textDecoration: "none",
                     transition: "color 0.3s ease",
                   }}
                   onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "rgba(255,255,255,0.8)")
+                    (e.currentTarget.style.color = "var(--accent-blue)")
                   }
                   onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "rgba(255,255,255,0.45)")
+                    (e.currentTarget.style.color = "var(--text-body)")
                   }
                 >
-                  Customer Service
+                  Flight Status
                 </a>
                 <a
                   href="#"
                   style={{
                     fontSize: "0.85rem",
-                    color: "rgba(255,255,255,0.45)",
+                    color: "var(--text-body)",
                     textDecoration: "none",
                     transition: "color 0.3s ease",
                   }}
                   onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = "rgba(255,255,255,0.8)")
+                    (e.currentTarget.style.color = "var(--accent-blue)")
                   }
                   onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = "rgba(255,255,255,0.45)")
+                    (e.currentTarget.style.color = "var(--text-body)")
                   }
                 >
-                  Press
+                  Contact Us
                 </a>
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           style={{
-            borderTop: "1px solid rgba(255,255,255,0.06)",
+            borderTop: "1px solid rgba(0,0,0,0.06)",
             paddingTop: "2rem",
             display: "flex",
             justifyContent: "space-between",
@@ -182,62 +182,45 @@ export default function Footer() {
           <span
             style={{
               fontSize: "0.75rem",
-              color: "rgba(255,255,255,0.2)",
+              color: "var(--text-muted)",
             }}
           >
-            © {currentYear} ANISH Watches. All rights reserved.
+            © {currentYear} Buddha Airlines. All rights reserved.
           </span>
           <div style={{ display: "flex", gap: "1.5rem" }}>
             <a
               href="#"
               style={{
                 fontSize: "0.75rem",
-                color: "rgba(255,255,255,0.2)",
+                color: "var(--text-muted)",
                 textDecoration: "none",
                 transition: "color 0.3s",
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.5)")
+                (e.currentTarget.style.color = "var(--accent-blue)")
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.2)")
+                (e.currentTarget.style.color = "var(--text-muted)")
               }
             >
-              Privacy
+              Privacy Policy
             </a>
             <a
               href="#"
               style={{
                 fontSize: "0.75rem",
-                color: "rgba(255,255,255,0.2)",
+                color: "var(--text-muted)",
                 textDecoration: "none",
                 transition: "color 0.3s",
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.5)")
+                (e.currentTarget.style.color = "var(--accent-blue)")
               }
               onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.2)")
+                (e.currentTarget.style.color = "var(--text-muted)")
               }
             >
-              Terms
-            </a>
-            <a
-              href="#"
-              style={{
-                fontSize: "0.75rem",
-                color: "rgba(255,255,255,0.2)",
-                textDecoration: "none",
-                transition: "color 0.3s",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.5)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "rgba(255,255,255,0.2)")
-              }
-            >
-              Legal
+              Terms of Service
             </a>
           </div>
         </div>
