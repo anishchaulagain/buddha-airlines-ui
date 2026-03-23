@@ -1,11 +1,19 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 export default function CTASection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  const mountainY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const cloudX = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
   return (
     <section
@@ -13,7 +21,7 @@ export default function CTASection() {
       ref={sectionRef}
       style={{
         position: "relative",
-        padding: "10rem 2rem 8rem",
+        padding: "12rem 2rem 10rem",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -23,26 +31,48 @@ export default function CTASection() {
         overflow: "hidden",
       }}
     >
-      {/* Background glow */}
-      <div
+      {/* Background Mountain */}
+      <motion.div
         style={{
           position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "600px",
-          height: "600px",
-          background:
-            "radial-gradient(ellipse at center, rgba(49, 96, 137, 0.06) 0%, transparent 70%)",
-          pointerEvents: "none",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundImage: "url('/cta-assets/experience-mountain.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "bottom center",
+          zIndex: 0,
+          y: mountainY,
+          opacity: 0.6
         }}
       />
 
+      {/* Background Cloud */}
+      <motion.div
+        style={{
+          position: "absolute",
+          top: "10%",
+          left: 0,
+          width: "120%",
+          height: "80%",
+          backgroundImage: "url('/cta-assets/cloud.png')",
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          zIndex: 1,
+          x: cloudX,
+          opacity: 0.4,
+          filter: "blur(4px)"
+        }}
+      />
+
+      {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        style={{ position: "relative", zIndex: 1, maxWidth: "700px" }}
+        style={{ position: "relative", zIndex: 2, maxWidth: "700px" }}
       >
         <div className="caption" style={{ marginBottom: "1.5rem", color: "var(--accent-blue)" }}>
           The Spirit of Nepal
@@ -52,7 +82,7 @@ export default function CTASection() {
           className="heading-lg"
           style={{
             marginBottom: "1.5rem",
-            textShadow: "0 0 60px rgba(49, 96, 137, 0.1)",
+            textShadow: "0 0 60px rgba(255, 255, 255, 0.8)",
             color: "var(--accent-blue)",
           }}
         >
@@ -65,6 +95,8 @@ export default function CTASection() {
             marginBottom: "3rem",
             maxWidth: "480px",
             margin: "0 auto 3rem",
+            color: "#333",
+            fontWeight: 500
           }}
         >
           Connecting you to the heart of the Himalayas. Experience safety, 
