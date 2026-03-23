@@ -13,7 +13,7 @@ export default function CTASection() {
   });
 
   const mountainY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-  const cloudX = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
+  const cloudX = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
   return (
     <section
@@ -27,7 +27,7 @@ export default function CTASection() {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        background: "#f8f9fa",
+        background: "#316089",
         overflow: "hidden",
       }}
     >
@@ -44,7 +44,7 @@ export default function CTASection() {
           backgroundPosition: "bottom center",
           zIndex: 0,
           y: mountainY,
-          opacity: 0.6
+          opacity: 1
         }}
       />
 
@@ -52,18 +52,17 @@ export default function CTASection() {
       <motion.div
         style={{
           position: "absolute",
-          top: "10%",
-          left: 0,
-          width: "120%",
-          height: "80%",
+          top: 0,
+          left: "-10%",
+          width: "140%",
+          height: "100%",
           backgroundImage: "url('/cta-assets/cloud.png')",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           zIndex: 1,
           x: cloudX,
-          opacity: 0.4,
-          filter: "blur(4px)"
+          opacity: 1,
         }}
       />
 
@@ -74,7 +73,7 @@ export default function CTASection() {
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         style={{ position: "relative", zIndex: 2, maxWidth: "700px" }}
       >
-        <div className="caption" style={{ marginBottom: "1.5rem", color: "var(--accent-blue)" }}>
+        <div className="caption" style={{ marginBottom: "1.5rem", color: "rgba(255, 255, 255, 0.8)" }}>
           The Spirit of Nepal
         </div>
 
@@ -82,8 +81,8 @@ export default function CTASection() {
           className="heading-lg"
           style={{
             marginBottom: "1.5rem",
-            textShadow: "0 0 60px rgba(255, 255, 255, 0.8)",
-            color: "var(--accent-blue)",
+            textShadow: "0 4px 30px rgba(0, 0, 0, 0.4)",
+            color: "white",
           }}
         >
           Fly High with Buddha Airlines.
@@ -95,8 +94,9 @@ export default function CTASection() {
             marginBottom: "3rem",
             maxWidth: "480px",
             margin: "0 auto 3rem",
-            color: "#333",
-            fontWeight: 500
+            color: "rgba(255, 255, 255, 0.9)",
+            fontWeight: 500,
+            textShadow: "0 2px 10px rgba(0, 0, 0, 0.2)"
           }}
         >
           Connecting you to the heart of the Himalayas. Experience safety, 
