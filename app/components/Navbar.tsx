@@ -1,16 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const navLinks = [
     { label: "Overview", href: "#overview" },
@@ -33,15 +26,7 @@ export default function Navbar() {
         alignItems: "center",
         justifyContent: "space-between",
         padding: "0 clamp(1.5rem, 4vw, 4rem)",
-        transition: "all 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
-        background: scrolled
-          ? "rgba(5, 5, 5, 0.72)"
-          : "transparent",
-        backdropFilter: scrolled ? "blur(20px) saturate(180%)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(20px) saturate(180%)" : "none",
-        borderBottom: scrolled
-          ? "1px solid rgba(255, 255, 255, 0.06)"
-          : "1px solid transparent",
+        background: "transparent",
       }}
     >
       {/* Brand */}
